@@ -1,15 +1,17 @@
 package mehpac;
 
 public class Ingreds {
-	private String text;
+	private String textIngreds;
 
-	public String getText() {
-		return text;
+	public String getTextIngreds() {
+		return textIngreds;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public void setTextIngreds(String textIngreds) {
+		this.textIngreds = textIngreds;
 	}
+
+	
 	
 
 }

@@ -75,7 +75,7 @@ public class Recipe {
 				r.setExpirey(expdate);
 				
 				int k=0;
-				//insert and sort
+				//insert based on expire date
 				for(Recipe rr:recipeList){
 					if(rr.getExpirey()>expdate)
 						break;
