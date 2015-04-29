@@ -36,10 +36,12 @@ public class Recipe {
 		
 		JSONArray obja=null;
 		JSONObject obj=null;
+		long tmnow = System.currentTimeMillis();
 		
 		try {
 			obja = (JSONArray) jParser.parse(s);
 			Iterator rit = obja.iterator();
+			//Recipes  loop
 			while(rit.hasNext()){
 				JSONObject aing = (JSONObject) rit.next();
 				
@@ -50,27 +52,44 @@ public class Recipe {
 				Recipe r = new Recipe();
 				r.setName(name);
 				long expdate = Long.MAX_VALUE;
-				
+				long ingexp = expdate;
+				boolean enough = true;
+				// recipe ingredient loop
 				while(ingit.hasNext()){
 					obj = (JSONObject) ingit.next();
 					String item = (String) obj.get("item");
-					int jj = Ingredient.getIngredientIndex(item);
-					if(jj <0)//ingredient not exist
+					int jj = Ingredient.getIngredientIndex(item.trim());
+					if(jj <0){//ingredient does not exist
+						System.out.println("item: "+item+" does not exist");
 						break;
-					Ingredient ling =  Ingredient.getIngredient(jj);
-					int amt = Integer.parseInt(((String) obj.get("amount")).trim());
-					if(amt > ling.getAmount())//not enough ingredient
-						break;
-					if (expdate > ling.getUseBy().getTime()){
-						////System.out.println("recipe name: "+name+ " item "+item);
-						expdate = ling.getUseBy().getTime();
 					}
+					Ingredient ling =  Ingredient.getIngredient(jj);
+					ingexp = ling.getUseBy().getTime();
+					if (expdate > ingexp){
+						//System.out.println("recipe name: "+name+ " item "+item);
+						expdate = ingexp;
+					}
+					//if already expired ignore this recipe
+					if (ingexp < tmnow){
+						break;
+					}
+					
+					int amt = Integer.parseInt(((String) obj.get("amount")).trim());
+					if(amt > ling.getAmount()){//not enough ingredient
+						enough = false;
+						break;
+					}
+					
 					//Ingredient(String s, int n, String unitnm, Date d )
 					Ingredient ning = new Ingredient();
 					ning.setAmount(amt);
 					ning.setItem(item);
 					ning.setUseBy(ling.getUseBy());
 					r.ingredients.add(ning);
+				}
+				//ignore this recipe if any of its ingredients expired
+				if ( expdate < tmnow || !enough){
+					continue;
 				}
 				r.setExpirey(expdate);
 				

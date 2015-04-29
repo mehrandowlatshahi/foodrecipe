@@ -21,9 +21,12 @@
 
 </head>
 <body>
+<div>
+<a href="${pageContext.request.contextPath}/">Home</a>
+</div>
 <form:form id="ingredients_form" method="post" action="/food/form/ingreds_added"   commandName="ings" >
 <form:errors path="*" element="div" cssClass="commonerrorblock"/>
-Ingredients: <form:textarea path="textIngreds" row="5" col="80"></form:textarea>
+Ingredients: <form:textarea path="textIngreds" row="10" col="80"></form:textarea>
 
 <form:errors path="textIngreds" cssClass="error"/>
 

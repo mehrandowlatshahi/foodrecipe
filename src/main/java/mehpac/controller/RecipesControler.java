@@ -42,6 +42,9 @@ public class RecipesControler {
 				return "recipes";
 			}
 			int trn = Recipe.getNumRecipes();
+			if(recps.getJsonRecipes().length() <5){
+				return "recipes";
+			}
 			Recipe.createRecipes(recps.getJsonRecipes());
 			
 			if (Recipe.getNumRecipes()<1)

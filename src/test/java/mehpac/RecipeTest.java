@@ -12,11 +12,11 @@ import org.junit.Test;
 
 public class RecipeTest {
 	static final String recipFP ="src/test/java/mehpac/recipes.json";
-	static final String ss = "bread,10,slices,25/12/2014 \n"+ 
-			"cheese,10,slices,24/12/2014\n"+
-			"butter,250,grams,25/12/2014 peanut\n"+
-			"butter,250,grams,25/12/2014 mixed\n"+
-			"salad,150,grams,26/12/2015";
+	static final String ss = "bread,10,slices,25/12/2015 \n"+ 
+			"cheese,10,slices,24/12/2015\n"+
+			"butter,250,grams,25/12/2015 peanut\n"+
+			"butter,250,grams,25/12/2015 mixed\n"+
+			"salad,150,grams,26/10/2015";
 	@Before
     public void setUp() {
 		Ingredient.resetIngredientList();
@@ -36,7 +36,7 @@ public class RecipeTest {
 		Recipe.createRecipes(rs);
 		assertEquals(2, Recipe.getNumRecipes());
 		Recipe r = Recipe.getRecipeByIndex(0);
-		long t = Ingredient.getDate("24/12/2014").getTime();
+		long t = Ingredient.getDate("26/10/2015").getTime();
 		
 		assertEquals(t, r.getExpirey());
 	}

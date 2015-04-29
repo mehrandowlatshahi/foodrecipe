@@ -12,13 +12,18 @@
 <p>
 Welcome to "Food Making application".<br/>
 </p>
-<i>${message}</i><br/>
 
+<p>${message}</p><br/>
+
+<div>
 <a href="${pageContext.request.contextPath}/food/form/ingreds">Add Ingredients</a>
-
+</div>
+<div>
 <a href="${pageContext.request.contextPath}/food/form/recipes">Add Recipes</a>
-
-
+</div>
+<div>
+<a href="${pageContext.request.contextPath}/getrecipe">Get Recipe</a>
+</div>
 
 </body>
 </html>

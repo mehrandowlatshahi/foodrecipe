@@ -47,8 +47,12 @@ public class Ingredient {
 	
 	
 	public static void addIngredients(String s){
-		String lss = s.replaceAll(" ", "\n");		
-		String[] isa = lss.split("\n");
+		String bs = "\r\n";
+		if (s.indexOf("\r")<0){
+			bs = "\n";
+		}
+		String lss = s.replaceAll(" ", bs);		
+		String[] isa = lss.split(bs);
 		String t=null;
 		for(String ss:isa){
 			if (ss.indexOf(",")<0){
