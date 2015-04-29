@@ -1,0 +1,10 @@
+mehpac\controller\IngredientController.class
+mehpac\controller\IngredsController.class
+mehpac\Recipes.class
+mehpac\controller\RecipesControler.class
+mehpac\Ingredient.class
+mehpac\Ingreds.class
+mehpac\IngredientValidator.class
+mehpac\controller\IndexController.class
+mehpac\Recipe.class
+mehpac\PacteraApplication.class
