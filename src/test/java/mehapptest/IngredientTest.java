@@ -1,4 +1,4 @@
-package mehpac;
+package mehapptest;
 
 import static org.junit.Assert.assertEquals;
 

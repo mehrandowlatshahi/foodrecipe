@@ -1,4 +1,4 @@
-package mehpac;
+package mehapptest;
 
 import mehapp.FoodRecipeApplication;
 

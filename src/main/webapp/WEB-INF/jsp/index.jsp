@@ -4,10 +4,12 @@
 <html lang="en">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
 <title>Home page</title>
 </head>
 <body>
+
+<div class="container">
 <h1>Home page</h1>
 <p>
 Welcome to "Food Making application".<br/>
@@ -32,10 +34,10 @@ Welcome to "Food Making application".<br/>
 <table id = "ingreds_table" style="display: none; text-align: center;" border="1px" cellpadding="0" cellspacing="0"  class="order-table table">
 <thead>
 <tr>
-<th width="150px">Name</th>
-<th width="25px">Amount</th>
-<th width="25px">Unit</th>
-<th width="250px">Use-By</th>
+<th width="20%">Name</th>
+<th width="5%">Amount</th>
+<th width="5%">Unit</th>
+<th width="15%">Use-By</th>
 </tr>
 </thead>
 
@@ -79,7 +81,7 @@ Welcome to "Food Making application".<br/>
 </table>
 </c:if>
 
-
+</div>
 
 <script type="text/javascript">
 

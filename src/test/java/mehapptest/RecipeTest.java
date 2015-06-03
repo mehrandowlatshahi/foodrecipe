@@ -1,4 +1,4 @@
-package mehpac;
+package mehapptest;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,7 +14,7 @@ import org.junit.Test;
 
 
 public class RecipeTest {
-	static final String recipFP ="src/test/java/mehpac/recipes.json";
+	static final String recipFP ="src/test/java/mehapptest/recipes.json";
 	static final String ss = "bread,10,slices,25/12/2015 \n"+ 
 			"cheese,10,slices,24/12/2015\n"+
 			"butter,250,grams,25/12/2015 peanut\n"+

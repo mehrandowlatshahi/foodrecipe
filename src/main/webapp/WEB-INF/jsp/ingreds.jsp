@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
 <head>
-
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
 <title>Ingredients Page</title>
 <style>
 .error {
@@ -21,18 +21,27 @@
 
 </head>
 <body>
-<div>
-<a href="${pageContext.request.contextPath}/" style="line-height: 2.5em;">Home</a>
+
+
+<div class="container">
+
+<div class="form-group">
+<a href="${pageContext.request.contextPath}/">Home</a>
 </div>
-<form:form id="ingredients_form" method="post" action="/food/form/ingreds_added"   commandName="ings" >
+
+<div class="form-group">
+<form:form role="form" id="ingredients_form" method="post" action="/food/form/ingreds_added"   commandName="ings" >
 <form:errors path="*" element="div" cssClass="commonerrorblock"/>
-Ingredients: <form:textarea path="textIngreds" row="80" col="200"></form:textarea>
+<label for="ingredient">Ingredient</label> 
+<form:textarea  path="textIngreds" style="display: block;"></form:textarea>
 
 <form:errors path="textIngreds" cssClass="error"/>
 
-
-<input type="submit"  value="Add Ingredients">
+<div class="form-group">
+<input class="form-control" type="submit"  value="Add Ingredients">
+</div>
 </form:form>
-
+</div>
+</div>
 </body>
 </html>

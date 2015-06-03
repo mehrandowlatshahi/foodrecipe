@@ -4,17 +4,23 @@
 <html lang="en">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
 <title>Offered Recipe</title>
 </head>
 <body>
-<h1>Offered Recipe</h1>
+<div class="container">
 
-<p>Offered Recipe : ${recipe}</p>
-
-<div>
+<div style="line-height: 2.5em;">
 <a href="${pageContext.request.contextPath}/">Home</a>
 </div>
 
+<h1 style="line-height: 2.5em;">Offered Recipe:</h1>
+
+
+<div>
+<h3>${recipe}</h3>
+</div>
+
+</div>
 </body>
 </html>
