@@ -21,7 +21,10 @@
 
 </head>
 <body>
-<form:form id="recipes_form" method="post" action="/food/form/recipes_added"   commandName="recps" >
+<div>
+<a href="${pageContext.request.contextPath}/">Home</a>
+</div>
+<form:form id="recipes_form" method="post" action="/food/form/recipes_added"   commandName="recpsCmd" >
 <form:errors path="*" element="div" cssClass="commonerrorblock"/>
 <div>
 Recipes: <form:textarea path="jsonRecipes" row="10" col="80"></form:textarea>

@@ -6,6 +6,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import mehapp.Ingredient;
+import mehapp.Recipe;
+
 import org.junit.Before;
 import org.junit.Test;
 

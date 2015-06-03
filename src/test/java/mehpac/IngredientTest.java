@@ -6,6 +6,8 @@ import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 
+import mehapp.Ingredient;
+
 import org.junit.Before;
 import org.junit.Test;
 
